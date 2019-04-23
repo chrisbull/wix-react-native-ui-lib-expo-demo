@@ -1,0 +1,47 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "alwaysStrict": true,
+    "emitDecoratorMetadata": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "jsx": "react",
+    "lib": ["dom", "es5", "es6", "es7", "esnext.asynciterable"],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noEmit": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "pretty": true,
+    "removeComments": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "strict": true,
+    "strictBindCallApply": true,
+    "strictFunctionTypes": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "target": "es6",
+    "baseUrl": "./src",
+    "paths": {
+      "*": ["*"]
+    },
+    "plugins": [
+      { "name": "typescript-tslint-plugin" },
+      //   { "name": "tslint-language-service" },
+      //   { "name": "@divyenduz/ts-graphql-plugin" },
+      { "name": "typescript-styled-plugin" }
+    ]
+  },
+  "exclude": ["node_modules", "**/node_modules/*", "examples"],
+  "include": ["**/*.d.ts", "src", "typings"]
+}
