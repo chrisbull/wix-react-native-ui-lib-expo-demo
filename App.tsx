@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
-import { createAppContainer, createDrawerNavigator } from "react-navigation";
+import { createAppContainer, createStackNavigator } from "react-navigation";
 
 import CardAnimationsScreen from "./src/screens/animationScreens/CardAnimationsScreen";
 import ListAnimationsScreen from "./src/screens/animationScreens/ListAnimationsScreen";
@@ -56,67 +56,78 @@ import SpacingsScreen from "./src/screens/styleScreens/SpacingsScreen";
 import TypographyScreen from "./src/screens/styleScreens/TypographyScreen";
 import TouchableOpacityScreen from "./src/screens/wrapperScreens/TouchableOpacityScreen";
 
+const HomeScreen = () => (
+  <View>
+    <Text>Home</Text>
+  </View>
+);
+
 const RootNavigator = createAppContainer(
-  createDrawerNavigator({
+  createStackNavigator({
+    // HomeScreen,
     CardAnimationsScreen,
-    ListAnimationsScreen,
-    ProgressBarScreen,
-    ActionBarScreen,
-    ActionSheetScreen,
-    AnimatedImageScreen,
-    AvatarsScreen,
-    BadgesScreen,
-    ButtonsScreen,
-    CardsScreen,
-    CarouselScreen,
-    CheckboxScreen,
-    ConnectionStatusBarScreen,
-    DialogScreen,
-    FeatureHighlightScreen,
-    HintsScreen,
-    InputsScreen,
-    MaskedInputScreen,
-    PageControlScreen,
-    PickerScreen,
-    RadioButtonScreen,
-    StepperScreen,
-    SwitchScreen,
-    TabBarScreen,
-    TagsInputScreen,
-    ToastsScreen,
-    TourScreen,
-    WheelPickerDialogScreen,
-    EmptyStateScreen,
-    LoadingScreen,
-    ModalScreen,
-    CustomScreen,
-    DemoSCreen,
-    DemoScreen,
-    TabControllerScreen,
-    DrawerScreen,
-    BasicListScreen,
-    ContactsListScreen,
-    ConversationListScreen,
-    MainScreen,
-    HighlightOverlayViewScreen,
-    WheelPickerViewScreen,
-    PlaygroundScreen,
-    AppleMusic,
-    ActionsList,
-    ListActionsScreen,
-    SettingsScreen,
-    BorderRadiusesScreen,
-    ColorsScreen,
-    ShadowsScreen,
-    SpacingsScreen,
-    TypographyScreen,
-    TouchableOpacityScreen,
+    //     // ListAnimationsScreen,
+    //     // ProgressBarScreen,
+    //     // ActionBarScreen,
+    //     // ActionSheetScreen,
+    //     // AnimatedImageScreen,
+    //     // AvatarsScreen,
+    //     // BadgesScreen,
+    //     // ButtonsScreen,
+    //     // CardsScreen,
+    //     // CarouselScreen,
+    //     // CheckboxScreen,
+    //     // ConnectionStatusBarScreen,
+    //     // DialogScreen,
+    //     // FeatureHighlightScreen,
+    //     // HintsScreen,
+    //     // InputsScreen,
+    //     // MaskedInputScreen,
+    //     // PageControlScreen,
+    //     // PickerScreen,
+    //     // RadioButtonScreen,
+    //     // StepperScreen,
+    //     // SwitchScreen,
+    //     // TabBarScreen,
+    //     // TagsInputScreen,
+    //     // ToastsScreen,
+    //     // TourScreen,
+    //     // WheelPickerDialogScreen,
+    //     // EmptyStateScreen,
+    //     // LoadingScreen,
+    //     // ModalScreen,
+    //     // CustomScreen,
+    //     // DemoSCreen,
+    //     // DemoScreen,
+    //     // TabControllerScreen,
+    //     // DrawerScreen,
+    //     // BasicListScreen,
+    //     // ContactsListScreen,
+    //     // ConversationListScreen,
+    //     // MainScreen,
+    //     // HighlightOverlayViewScreen,
+    //     // WheelPickerViewScreen,
+    //     // PlaygroundScreen,
+    //     // AppleMusic,
+    //     // ActionsList,
+    //     // ListActionsScreen,
+    //     // SettingsScreen,
+    //     // BorderRadiusesScreen,
+    //     // ColorsScreen,
+    //     // ShadowsScreen,
+    //     // SpacingsScreen,
+    //     // TypographyScreen,
+    //     // TouchableOpacityScreen,
   }),
 );
 
 export default class App extends React.Component {
   public render() {
-    return <RootNavigator />;
+    return (
+      <View style={{ flex: 1 }}>
+        <RootNavigator />
+      </View>
+    );
   }
 }
 
