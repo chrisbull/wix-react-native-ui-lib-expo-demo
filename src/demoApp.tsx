@@ -1,9 +1,8 @@
-import {AsyncStorage} from 'react-native';
-import {Navigation} from 'react-native-navigation';
-import * as Animatable from 'react-native-animatable';
-import {AnimatableManager, ThemeManager, Constants, Assets, Colors, Typography} from 'react-native-ui-lib'; //eslint-disable-line
-import {registerScreens} from './screens';
-
+import { AsyncStorage } from "react-native";
+// import {Navigation} from 'react-native-navigation';
+import * as Animatable from "react-native-animatable";
+import { AnimatableManager, Assets, Colors, Constants, ThemeManager, Typography } from "react-native-ui-lib"; // eslint-disable-line
+import { registerScreens } from "./screens";
 
 /** Examples - uncomment when needed */
 // Typography.loadTypographies({
@@ -60,26 +59,27 @@ import {registerScreens} from './screens';
 //   customAnimation1: {
 //     from: {opacity: 0, translateY: 20},
 //     to: {opacity: 1, translateY: 0},
-//   }, 
+//   },
 //   customAnimation2: {
 //     from: {opacity: 0, translateY: 40},
 //     to: {opacity: 1, translateY: 0},
 //   },
 // };
 // IMPORTANT! Make uilib's animations available globally for the app's use (option to pass adittional animation definitions)
-Animatable.initializeRegistryWithDefinitions(AnimatableManager.loadAnimationDefinitions(/** customAnimationsDefinitions */)); 
-
+Animatable.initializeRegistryWithDefinitions(
+  AnimatableManager.loadAnimationDefinitions(/** customAnimationsDefinitions */),
+);
 
 function getDefaultNavigationStyle() {
   return {
     statusBar: {
       visible: true,
-      style: 'light',
+      style: "light",
       backgroundColor: ThemeManager.primaryColor, // for Android
     },
     layout: {
       backgroundColor: Colors.white,
-      orientation: ['portrait'],
+      orientation: ["portrait"],
     },
     topBar: {
       visible: true,
@@ -91,23 +91,23 @@ function getDefaultNavigationStyle() {
       title: {
         color: Colors.white,
         fontSize: Typography.text70.fontSize,
-        fontFamily: Constants.isAndroid ? 'sans-serif-bold' : '.SFUIText-Heavy',
-        alignment: 'center',
+        fontFamily: Constants.isAndroid ? "sans-serif-bold" : ".SFUIText-Heavy",
+        alignment: "center",
       },
       subtitle: {
         color: Colors.white,
         fontSize: Typography.text80.fontSize,
-        fontFamily: Constants.isAndroid ? Typography.text80.fontFamily : '.SFUIText-Medium',
+        fontFamily: Constants.isAndroid ? Typography.text80.fontFamily : ".SFUIText-Medium",
       },
       backButton: {
         // visible: true,
         color: Colors.white,
         showTitle: Constants.isIOS ? false : undefined,
-        testID: 'pop',
+        testID: "pop",
       },
-      leftButtonColor: Colors.white, 
+      leftButtonColor: Colors.white,
       leftButtonDisabledColor: Colors.rgba(Colors.white, 0.6),
-      rightButtonColor: Colors.white, 
+      rightButtonColor: Colors.white,
       rightButtonDisabledColor: Colors.rgba(Colors.white, 0.6),
     },
   };
@@ -122,11 +122,11 @@ function startApp(defaultScreen) {
         children: [
           {
             component: {
-              name: 'unicorn.MainScreen',
+              name: "unicorn.MainScreen",
               options: {
                 topBar: {
                   title: {
-                    text: 'UILIB',
+                    text: "UILIB",
                   },
                 },
               },
@@ -150,7 +150,7 @@ function startApp(defaultScreen) {
 
 async function getDefaultScreenAndStartApp() {
   try {
-    const defaultScreen = await AsyncStorage.getItem('uilib.defaultScreen');
+    const defaultScreen = await AsyncStorage.getItem("uilib.defaultScreen");
     startApp(defaultScreen);
   } catch (error) {
     console.warn(error);

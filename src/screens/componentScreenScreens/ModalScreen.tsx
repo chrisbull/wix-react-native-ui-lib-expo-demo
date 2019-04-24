@@ -1,11 +1,10 @@
-import React, {Component} from 'react';
-import {Alert, StyleSheet} from 'react-native';
-import {Navigation} from 'react-native-navigation';
-import {Colors, Carousel, PageControl, Modal, View, Text, Constants} from 'react-native-ui-lib';//eslint-disable-line
+import React, { Component } from "react";
+import { Alert, StyleSheet } from "react-native";
+// import {Navigation} from 'react-native-navigation';
+import { Carousel, Colors, Constants, Modal, PageControl, Text, View } from "react-native-ui-lib"; // eslint-disable-line
 
 export default class ModalScreen extends Component {
-
-  static options() {
+  public static options() {
     return {
       topBar: {
         drawBehind: true,
@@ -22,11 +21,11 @@ export default class ModalScreen extends Component {
     };
   }
 
-  closeScreen() {
+  public closeScreen() {
     Navigation.pop(this.props.componentId);
   }
 
-  render() {
+  public render() {
     return (
       <View flex>
         <PageControl
@@ -36,72 +35,66 @@ export default class ModalScreen extends Component {
           color={Colors.dark10}
           size={15}
         />
-        <Carousel onChangePage={currentPage => this.setState({currentPage})}>
+        <Carousel onChangePage={(currentPage) => this.setState({ currentPage })}>
           <View bg-green50 flex style={styles.page}>
             <Modal.TopBar
-              title='modal title'
+              title="modal title"
               onCancel={() => this.closeScreen()}
-              onDone={() => Alert.alert('done')}
+              onDone={() => Alert.alert("done")}
               doneButtonProps={{
                 disabled: true,
               }}
             />
             <View padding-20>
-              <Text text70>
-                This is an example of a custom modal top bar.
-              </Text>
-              <Text text70>
-                By default you get the &apos;x&apos; cancel icon and &apos;save&apos; as done label
-              </Text>
+              <Text text70>This is an example of a custom modal top bar.</Text>
+              <Text text70>By default you get the &apos;x&apos; cancel icon and &apos;save&apos; as done label</Text>
             </View>
           </View>
 
           <View bg-violet80 flex style={styles.page}>
             <Modal.TopBar
-              title='another example'
-              onCancel={() => Alert.alert('cancel')}
-              onDone={() => Alert.alert('done')}
+              title="another example"
+              onCancel={() => Alert.alert("cancel")}
+              onDone={() => Alert.alert("done")}
               cancelIcon={null}
-              cancelLabel='back'
+              cancelLabel="back"
             />
             <View padding-20>
               <Text text70>
-                You can of course change it by changing the values of
-                cancelIcon, cancelLabel, doneIcon, doneLabel and other props..
+                You can of course change it by changing the values of cancelIcon, cancelLabel, doneIcon, doneLabel and
+                other props..
               </Text>
             </View>
           </View>
 
           <View bg-orange70 flex style={styles.page}>
             <Modal.TopBar
-              title='last one'
-              onCancel={() => Alert.alert('cancel')}
-              onDone={() => Alert.alert('done')}
+              title="last one"
+              onCancel={() => Alert.alert("cancel")}
+              onDone={() => Alert.alert("done")}
               cancelIcon={null}
-              cancelLabel='back'
+              cancelLabel="back"
             />
             <View padding-20>
-              <Text text70>
-                Sending onDone/onCancel is required for rendering done/cancel actions
-              </Text>
+              <Text text70>Sending onDone/onCancel is required for rendering done/cancel actions</Text>
             </View>
           </View>
 
           <View bg-dark70 flex style={styles.page}>
             <Modal.TopBar
-              title='Custom Style'
-              onCancel={() => Alert.alert('cancel')}
-              onDone={() => Alert.alert('done')}
-              doneButtonProps={{color: Colors.orange30}}
-              cancelButtonProps={{iconStyle: {tintColor: Colors.orange30}}}
+              title="Custom Style"
+              onCancel={() => Alert.alert("cancel")}
+              onDone={() => Alert.alert("done")}
+              doneButtonProps={{ color: Colors.orange30 }}
+              cancelButtonProps={{ iconStyle: { tintColor: Colors.orange30 } }}
             />
             <View padding-20>
               <Text text70>
-                use doneButtonProps/cancelButtonProps properties to have custom behaviour or style for done/cancel actions
+                use doneButtonProps/cancelButtonProps properties to have custom behaviour or style for done/cancel
+                actions
               </Text>
             </View>
           </View>
-
         </Carousel>
       </View>
     );
@@ -116,7 +109,7 @@ const styles = StyleSheet.create({
     zIndex: 1,
   },
   absoluteContainer: {
-    position: 'absolute',
+    position: "absolute",
     bottom: 20,
     left: 20,
     right: 0,

@@ -1,29 +1,29 @@
-import _ from 'lodash';
-import React, {Component} from 'react';
-import {StyleSheet, ScrollView} from 'react-native';
-import {Constants, Colors, View, Card, Button, Text, Image} from 'react-native-ui-lib'; //eslint-disable-line
-import posts from '../../data/posts';
+import _ from "lodash";
+import React, { Component } from "react";
+import { ScrollView, StyleSheet } from "react-native";
+import { Button, Card, Colors, Constants, Image, Text, View } from "react-native-ui-lib"; // eslint-disable-line
+import posts from "../../data/posts";
 
-const featureIcon = require('../../assets/icons/star.png');
-const shareIcon = require('../../assets/icons/share.png');
-const cardImage = require('../../assets/images/card-example.jpg');
-const cardImage2 = require('../../assets/images/empty-state.jpg');
+const featureIcon = require("../../assets/icons/star.png");
+const shareIcon = require("../../assets/icons/share.png");
+const cardImage = require("../../assets/images/card-example.jpg");
+const cardImage2 = require("../../assets/images/empty-state.jpg");
 
 export default class CardsScreen extends Component {
-  state = {
+  public state = {
     selected1: true,
     selected2: true,
   };
 
-  render() {
-    const {selected1, selected2} = this.state;
+  public render() {
+    const { selected1, selected2 } = this.state;
     return (
       <View>
         <Image
           style={StyleSheet.absoluteFillObject}
           source={{
             uri:
-              'https://images.pexels.com/photos/1005644/pexels-photo-1005644.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+              "https://images.pexels.com/photos/1005644/pexels-photo-1005644.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
           }}
         />
 
@@ -32,13 +32,13 @@ export default class CardsScreen extends Component {
             <ScrollView
               horizontal
               height={100}
-              style={{overflow: 'visible'}}
-              contentContainerStyle={{padding: 5}}
+              style={{ overflow: "visible" }}
+              contentContainerStyle={{ padding: 5 }}
               showsHorizontalScrollIndicator={false}
             >
-              {_.times(4, i => {
+              {_.times(4, (i) => {
                 return (
-                  <Card key={i} width={100} style={{marginRight: 20}}>
+                  <Card key={i} width={100} style={{ marginRight: 20 }}>
                     <View padding-15>
                       <Text text30 dark30>
                         {i}
@@ -55,18 +55,18 @@ export default class CardsScreen extends Component {
                 flex
                 marginV-20
                 selected={selected1}
-                onPress={() => this.setState({selected1: !selected1})}
+                onPress={() => this.setState({ selected1: !selected1 })}
                 activeOpacity={1}
                 marginR-20
               >
-                <Card.Image height={'100%'} imageSource={cardImage} />
+                <Card.Image height={"100%"} imageSource={cardImage} />
               </Card>
               <Card
                 height={120}
                 flex
                 marginV-20
                 selected={selected2}
-                onPress={() => this.setState({selected2: !selected2})}
+                onPress={() => this.setState({ selected2: !selected2 })}
                 activeOpacity={1}
                 selectionOptions={{
                   color: Colors.dark10,
@@ -74,17 +74,17 @@ export default class CardsScreen extends Component {
                   borderWidth: 3,
                 }}
               >
-                <Card.Image height={'100%'} imageSource={cardImage} />
+                <Card.Image height={"100%"} imageSource={cardImage} />
               </Card>
             </View>
 
             <View row>
-              <Card flex center marginB-20 height={80} style={{backgroundColor: Colors.dark60}} marginR-20>
+              <Card flex center marginB-20 height={80} style={{ backgroundColor: Colors.dark60 }} marginR-20>
                 <Text text80 center white>
                   With custom background color
                 </Text>
               </Card>
-              <Card flex center marginB-20 height={80} style={{backgroundColor: Colors.rgba(Colors.dark60, 0.75)}}>
+              <Card flex center marginB-20 height={80} style={{ backgroundColor: Colors.rgba(Colors.dark60, 0.75) }}>
                 <Text text70 center white>
                   With opacity
                 </Text>
@@ -110,7 +110,7 @@ export default class CardsScreen extends Component {
               )}
             </View>
 
-            <Card row height={160} style={{marginBottom: 15}} onPress={() => {}} enableBlur>
+            <Card row height={160} style={{ marginBottom: 15 }} onPress={() => {}} enableBlur>
               <Card.Image width={115} imageSource={cardImage} />
               <View padding-20 flex>
                 <Text text70 dark10>
@@ -126,7 +126,7 @@ export default class CardsScreen extends Component {
               </View>
             </Card>
 
-            <Card row height={160} style={{marginBottom: 15}} onPress={() => {}} br10>
+            <Card row height={160} style={{ marginBottom: 15 }} onPress={() => {}} br10>
               <View padding-20 flex>
                 <Text text70 dark10>
                   You’re Invited!
@@ -143,7 +143,7 @@ export default class CardsScreen extends Component {
               <Card.Image width={115} imageSource={cardImage} />
             </Card>
 
-            <Card style={{marginBottom: 15}} onPress={() => {}}>
+            <Card style={{ marginBottom: 15 }} onPress={() => {}}>
               <View padding-20>
                 <Text text70 dark10>
                   You’re Invited!
@@ -157,9 +157,9 @@ export default class CardsScreen extends Component {
             </Card>
 
             {_.map(posts, (post, i) => {
-              const statusColor = post.status === 'Published' ? Colors.green30 : Colors.orange30;
+              const statusColor = post.status === "Published" ? Colors.green30 : Colors.orange30;
               return (
-                <Card key={i} style={{marginBottom: 15}} onPress={() => console.log('press on a card')}>
+                <Card key={i} style={{ marginBottom: 15 }} onPress={() => console.log("press on a card")}>
                   <Card.Image height={160} imageSource={post.coverImage} />
 
                   <View padding-20>
@@ -182,7 +182,7 @@ export default class CardsScreen extends Component {
                         {post.likes} Likes
                       </Text>
                       <View row right>
-                        <Button style={{marginRight: 10}} text90 link iconSource={featureIcon} label="Feature" />
+                        <Button style={{ marginRight: 10 }} text90 link iconSource={featureIcon} label="Feature" />
                         <Button text90 link iconSource={shareIcon} label="Share" />
                       </View>
                     </View>

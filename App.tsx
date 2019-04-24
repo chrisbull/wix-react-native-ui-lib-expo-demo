@@ -1,6 +1,6 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
-import { createAppContainer, createStackNavigator } from "react-navigation";
+import { SafeAreaView, StyleSheet, Text, View } from "react-native";
+import { createAppContainer, createDrawerNavigator, createStackNavigator } from "react-navigation";
 
 import CardAnimationsScreen from "./src/screens/animationScreens/CardAnimationsScreen";
 import ListAnimationsScreen from "./src/screens/animationScreens/ListAnimationsScreen";
@@ -63,70 +63,58 @@ const HomeScreen = () => (
 );
 
 const RootNavigator = createAppContainer(
-  createStackNavigator({
-    // HomeScreen,
+  createDrawerNavigator({
     CardAnimationsScreen,
-    //     // ListAnimationsScreen,
-    //     // ProgressBarScreen,
-    //     // ActionBarScreen,
-    //     // ActionSheetScreen,
-    //     // AnimatedImageScreen,
-    //     // AvatarsScreen,
-    //     // BadgesScreen,
-    //     // ButtonsScreen,
-    //     // CardsScreen,
-    //     // CarouselScreen,
-    //     // CheckboxScreen,
-    //     // ConnectionStatusBarScreen,
-    //     // DialogScreen,
-    //     // FeatureHighlightScreen,
-    //     // HintsScreen,
-    //     // InputsScreen,
-    //     // MaskedInputScreen,
-    //     // PageControlScreen,
-    //     // PickerScreen,
-    //     // RadioButtonScreen,
-    //     // StepperScreen,
-    //     // SwitchScreen,
-    //     // TabBarScreen,
-    //     // TagsInputScreen,
-    //     // ToastsScreen,
-    //     // TourScreen,
-    //     // WheelPickerDialogScreen,
-    //     // EmptyStateScreen,
-    //     // LoadingScreen,
-    //     // ModalScreen,
-    //     // CustomScreen,
-    //     // DemoSCreen,
-    //     // DemoScreen,
-    //     // TabControllerScreen,
-    //     // DrawerScreen,
-    //     // BasicListScreen,
-    //     // ContactsListScreen,
-    //     // ConversationListScreen,
-    //     // MainScreen,
-    //     // HighlightOverlayViewScreen,
-    //     // WheelPickerViewScreen,
-    //     // PlaygroundScreen,
-    //     // AppleMusic,
-    //     // ActionsList,
-    //     // ListActionsScreen,
-    //     // SettingsScreen,
-    //     // BorderRadiusesScreen,
-    //     // ColorsScreen,
-    //     // ShadowsScreen,
-    //     // SpacingsScreen,
-    //     // TypographyScreen,
-    //     // TouchableOpacityScreen,
+    ActionBarScreen,
+    ActionSheetScreen,
+    AnimatedImageScreen,
+    AppleMusic,
+    AvatarsScreen,
+    BadgesScreen,
+    BasicListScreen,
+    BorderRadiusesScreen,
+    ButtonsScreen,
+    CarouselScreen,
+    CheckboxScreen,
+    ColorsScreen,
+    ConnectionStatusBarScreen,
+    ContactsListScreen,
+    ConversationListScreen,
+    CustomScreen,
+    EmptyStateScreen,
+    HintsScreen,
+    InputsScreen,
+    ListActionsScreen,
+    ListAnimationsScreen,
+    LoadingScreen,
+    MaskedInputScreen,
+    PageControlScreen,
+    PickerScreen,
+    PlaygroundScreen,
+    ProgressBarScreen,
+    RadioButtonScreen,
+    SettingsScreen,
+    ShadowsScreen,
+    SpacingsScreen,
+    StepperScreen,
+    SwitchScreen,
+    TabBarScreen,
+    TagsInputScreen,
+    ToastsScreen,
+    TouchableOpacityScreen,
+    TourScreen,
+    TypographyScreen,
+    WheelPickerDialogScreen,
+    WheelPickerViewScreen,
   }),
 );
 
 export default class App extends React.Component {
   public render() {
     return (
-      <View style={{ flex: 1 }}>
+      <SafeAreaView style={{ flex: 1 }}>
         <RootNavigator />
-      </View>
+      </SafeAreaView>
     );
   }
 }

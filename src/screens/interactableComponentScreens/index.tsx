@@ -1,5 +1,4 @@
-import {Navigation} from 'react-native-navigation';
-import DrawerScreen from './DrawerScreen';
+// import {Navigation} from 'react-native-navigation';
+import DrawerScreen from "./DrawerScreen";
 
-
-Navigation.registerComponent('unicorn.interactableComponents.DrawerScreen', () => DrawerScreen);
+Navigation.registerComponent("unicorn.interactableComponents.DrawerScreen", () => DrawerScreen);
